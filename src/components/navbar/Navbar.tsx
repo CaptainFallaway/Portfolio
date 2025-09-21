@@ -6,22 +6,43 @@ import { Seperator } from "./Seperator";
 import { ThemeButton } from "./ThemeButton";
 
 export function NavigationBar() {
+  const handleSocialClick = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
+  const scrollOneViewHeight = (index: number) => {
+    window.scrollTo({
+      top: window.innerHeight * index,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="navbar">
-      <NavBarButton label="Home">
+      <NavBarButton onClick={() => scrollOneViewHeight(0)} label="Home">
         <HomeIcon className="navbar-button-logo" />
       </NavBarButton>
-      <NavBarButton label="About">
+      <NavBarButton onClick={() => scrollOneViewHeight(1)} label="About">
         <Library className="navbar-button-logo" />
       </NavBarButton>
-      <NavBarButton label="Contact">
+      <NavBarButton onClick={() => scrollOneViewHeight(2)} label="Contact">
         <CircleUser className="navbar-button-logo" />
       </NavBarButton>
       <Seperator />
-      <NavBarButton label="Linkedin">
+      <NavBarButton
+        onClick={() =>
+          handleSocialClick(
+            "https://www.linkedin.com/in/alexander-wollm%C3%A9r-507618191/"
+          )
+        }
+        label="Linkedin"
+      >
         <Linkedin className="navbar-button-logo" />
       </NavBarButton>
-      <NavBarButton label="Github">
+      <NavBarButton
+        onClick={() => handleSocialClick("https://github.com/CaptainFallaway")}
+        label="Github"
+      >
         <Github className="navbar-button-logo" />
       </NavBarButton>
       <Seperator />

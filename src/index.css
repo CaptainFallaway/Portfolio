@@ -136,18 +136,18 @@ section {
 }
 
 .navbar {
-  @apply p-2 m-6 gap-2 flex outline rounded-md items-center justify-center;
+  @apply p-2 mb-6 gap-2 flex outline rounded-md items-center justify-center;
 }
 
 .navbar-button {
-  @apply size-16 hover:bg-accent/70 hover:scale-105 transition-all duration-200 rounded-md cursor-pointer;
+  @apply size-12 sm:size-16 hover:bg-accent/70 hover:scale-105 transition-all duration-200 rounded-md cursor-pointer;
 }
 
 .navbar-seperator {
-  @apply h-12 w-[1px];
+  @apply h-8 sm:h-12 w-[1px] transition-all duration-200;
   background-color: color-mix(in oklab, var(--ring) 50%, transparent);
 }
 
 .navbar-button-logo {
-  @apply size-6;
+  @apply size-5 sm:size-6 transition-all duration-200;
 }
