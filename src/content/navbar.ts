@@ -45,4 +45,6 @@ export const NAVBAR_ITEMS: Navbar = [
     type: "button",
     item: { label: "Github", icon: Github, onClick: () => openURL(GithubURL) },
   },
+  { type: "separator" },
+  { type: "theme-toggle" }
 ];
