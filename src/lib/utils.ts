@@ -4,3 +4,14 @@ import { twMerge } from "tailwind-merge"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+
+export function openURL(url: string) {
+  window.open(url, "_blank", "noopener,noreferrer");
+}
+
+export const scrollOneViewHeight = (index: number) => {
+  window.scrollTo({
+    top: window.innerHeight * index,
+    behavior: "smooth",
+  });
+};

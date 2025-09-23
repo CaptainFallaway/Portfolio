@@ -1,0 +1,27 @@
+main {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ring) var(--color-background);
+  height: 300vh;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-box {
+  @apply p-6
+    sm:w-[36rem]
+    w-[calc(100vw-3rem)]
+
+    bg-card
+    text-card-foreground
+
+    rounded-xl
+    shadow-md;
+}

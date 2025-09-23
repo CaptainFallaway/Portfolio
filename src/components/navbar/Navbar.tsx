@@ -1,52 +1,32 @@
-import { CircleUser, HomeIcon, Library } from "lucide-react";
-import { Linkedin, Github } from "../logos";
-
 import { NavBarButton } from "./Button";
 import { Seperator } from "./Seperator";
 import { ThemeButton } from "./ThemeButton";
 
+import { NAVBAR_ITEMS } from "@/content/navbar";
+
 export function NavigationBar() {
-  const handleSocialClick = (url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
-
-  const scrollOneViewHeight = (index: number) => {
-    window.scrollTo({
-      top: window.innerHeight * index,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <div className="navbar">
-      <NavBarButton onClick={() => scrollOneViewHeight(0)} label="Home">
-        <HomeIcon className="navbar-button-logo" />
-      </NavBarButton>
-      <NavBarButton onClick={() => scrollOneViewHeight(1)} label="About">
-        <Library className="navbar-button-logo" />
-      </NavBarButton>
-      <NavBarButton onClick={() => scrollOneViewHeight(2)} label="Contact">
-        <CircleUser className="navbar-button-logo" />
-      </NavBarButton>
-      <Seperator />
-      <NavBarButton
-        onClick={() =>
-          handleSocialClick(
-            "https://www.linkedin.com/in/alexander-wollm%C3%A9r-507618191/"
-          )
+      {NAVBAR_ITEMS.map((navItem, index) => {
+        if (navItem.type === "separator") return <Seperator key={index} />;
+
+        if (navItem.type === "theme-toggle") return <ThemeButton key={index} />;
+
+        if (!navItem.item) {
+          console.error("Nav item is missing 'item' property:", navItem);
+          return null;
         }
-        label="Linkedin"
-      >
-        <Linkedin className="navbar-button-logo" />
-      </NavBarButton>
-      <NavBarButton
-        onClick={() => handleSocialClick("https://github.com/CaptainFallaway")}
-        label="Github"
-      >
-        <Github className="navbar-button-logo" />
-      </NavBarButton>
-      <Seperator />
-      <ThemeButton />
+
+        return (
+          <NavBarButton
+            key={index}
+            onClick={navItem.item.onClick}
+            label={navItem.item.label}
+          >
+            <navItem.item.icon className="navbar-button-logo" />
+          </NavBarButton>
+        );
+      })}
     </div>
   );
 }

@@ -4,20 +4,22 @@ export default function App() {
   return (
     <main>
       {/* Navigation */}
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 z-20">
+      <div className="fixed w-screen bottom-0 left-1/2 -translate-x-1/2 z-20">
         <NavigationBar />
       </div>
 
       {/* Greetings */}
-      <section>
+      <section id="home">
         <h1 className="text-4xl font-bold">Hello, I'm Alex</h1>
       </section>
 
       {/* Skills */}
-      <section></section>
+      <section id="about">
+        <h2 className="text-2xl font-semibold">Skills</h2>
+      </section>
 
       {/* Where? */}
-      <section></section>
+      <section id="socials"></section>
     </main>
   );
 }

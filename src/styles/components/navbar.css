@@ -1,0 +1,42 @@
+.navbar {
+  @apply mb-6 
+    p-2
+    gap-2
+
+    flex 
+    items-center
+    justify-self-center-safe
+
+    sm:w-[36rem]
+    w-[calc(100vw-3rem)]
+
+    bg-card
+
+    rounded-full
+    outline;
+}
+
+.navbar-button {
+  @apply aspect-square
+    size-auto
+    flex-1
+    rounded-md
+    cursor-pointer;
+}
+
+.navbar-button:first-child {
+  @apply rounded-l-[48px] rounded-r-md;
+}
+
+.navbar-button:last-child {
+  @apply rounded-r-[48px] rounded-l-md;
+}
+
+.navbar-button-logo {
+  @apply size-6;
+}
+
+.navbar-seperator {
+  @apply w-[1px] h-12;
+  background-color: color-mix(in oklab, var(--ring) 50%, transparent);
+}
