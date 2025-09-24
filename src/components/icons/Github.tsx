@@ -1,10 +1,7 @@
 import { cn } from "@/lib/utils";
-import type { SVGProps } from "react";
+import type { IconComponent } from "./types";
 
-export default function Github({
-  className,
-  ...props
-}: SVGProps<SVGSVGElement>) {
+export const Github: IconComponent = ({ className, ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,4 +16,4 @@ export default function Github({
       />
     </svg>
   );
-}
+};
