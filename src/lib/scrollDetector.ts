@@ -82,7 +82,6 @@ export class ScrollDetector {
   }
 
   private handleTouchStart(e: TouchEvent) {
-    // e.preventDefault();
     this.touchStartY = e.touches[0].clientY;
   }
 
@@ -97,7 +96,6 @@ export class ScrollDetector {
       const direction: ScrollDirection = deltaY > 0 ? 'down' : 'up';
       this.callback(direction);
       this.hasTouchScrolled = true;
-      // this.touchStartY = touchY;
     }
   }
 
