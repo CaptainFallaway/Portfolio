@@ -23,7 +23,7 @@ export function NavigationBar() {
             onClick={navItem.item.onClick}
             label={navItem.item.label}
           >
-            <navItem.item.icon className="navbar-button-logo" />
+            <navItem.item.Icon className="navbar-button-logo" />
           </NavBarButton>
         );
       })}

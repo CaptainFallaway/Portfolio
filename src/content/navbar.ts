@@ -1,50 +1,36 @@
-import { Github, Linkedin, WavingHand } from "@/components/icons";
-import { Library, CircleUser } from "lucide-react";
+import { Github, Linkedin } from "@/components/icons";
 
 import { GithubURL, LinkedinURL } from "@/content/socials";
 
 import scrollManager from "@/lib/scrollManager";
 import { openURL } from "@/lib/utils";
 
-import type { Navbar } from "./types";
+import type { Navbar, NavbarItem } from "./types/navbar";
+import { SITE } from "./site";
+
+const SectionNavButtons: NavbarItem[] = SITE.sections.map((section) => ({
+  type: "button",
+  item: {
+    label: section.title,
+    Icon: section.NavbarIcon,
+    onClick: () => scrollManager.scrollToSection(section.id),
+  },
+}));
 
 export const NAVBAR_ITEMS: Navbar = [
-  {
-    type: "button",
-    item: {
-      label: "Hello",
-      icon: WavingHand,
-      onClick: () => scrollManager.scrollToSection("hello"),
-    },
-  },
-  {
-    type: "button",
-    item: {
-      label: "About",
-      icon: Library,
-      onClick: () => scrollManager.scrollToSection("about"),
-    },
-  },
-  {
-    type: "button",
-    item: {
-      label: "Contact",
-      icon: CircleUser,
-      onClick: () => scrollManager.scrollToSection("socials"),
-    },
-  },
+  ...SectionNavButtons,
   { type: "separator" },
   {
     type: "button",
     item: {
       label: "Linkedin",
-      icon: Linkedin,
+      Icon: Linkedin,
       onClick: () => openURL(LinkedinURL),
     },
   },
   {
     type: "button",
-    item: { label: "Github", icon: Github, onClick: () => openURL(GithubURL) },
+    item: { label: "Github", Icon: Github, onClick: () => openURL(GithubURL) },
   },
   { type: "separator" },
   { type: "theme-toggle" },

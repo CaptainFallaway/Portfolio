@@ -2,6 +2,16 @@ export type ScrollDirection = 'up' | 'down';
 
 export type ScrollCallback = (direction: ScrollDirection) => Promise<void>;
 
+const INTERACTIVE_TAGS = ['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON', 'A'];
+
+function documentActiveElementIsInteractive(): boolean {
+  const activeElement = document.activeElement;
+  if (!activeElement) return false;
+  if (INTERACTIVE_TAGS.includes(activeElement.tagName)) return true;
+  if (activeElement.getAttribute('contenteditable') === 'true') return true;
+  return false;
+}
+
 export class ScrollDetector {
   // Keep track of the initial touch when touch event is started
   private touchStartY: number = 0;
@@ -112,16 +122,14 @@ export class ScrollDetector {
   }
 
   private handleKeyUp(e: KeyboardEvent) {
-    if (this.isDetecting) return;
+    if (this.isDetecting || documentActiveElementIsInteractive()) return;
 
     switch (e.key) {
-      case 'ArrowDown':
-      case 'PageDown':
       case ' ':
+      case 'ArrowDown':
         this.callback('down');
         break;
       case 'ArrowUp':
-      case 'PageUp':
         this.callback('up');
         break;
     }

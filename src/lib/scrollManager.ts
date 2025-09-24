@@ -1,3 +1,4 @@
+import { SITE } from "@/content/site";
 import { ScrollDetector, type ScrollDirection } from "./scrollDetector";
 
 class ScrollManager {
@@ -134,5 +135,6 @@ class ScrollManager {
 
 }
 
-const scrollManager = new ScrollManager("hello", "about", "socials");
+const scrollManager = new ScrollManager(...SITE.sections.map(section => section.id));
 export default scrollManager;
+
