@@ -12,7 +12,7 @@
 
     bg-card
 
-    rounded-full
+    rounded-4xl
     outline;
 }
 
@@ -25,11 +25,11 @@
 }
 
 .navbar-button:first-child {
-  @apply rounded-l-[48px] rounded-r-md;
+  @apply rounded-l-4xl rounded-r-md;
 }
 
 .navbar-button:last-child {
-  @apply rounded-r-[48px] rounded-l-md;
+  @apply rounded-r-4xl rounded-l-md;
 }
 
 .navbar-button-logo {
