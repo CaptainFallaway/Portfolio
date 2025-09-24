@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import type { IconComponent } from "./types";
+import type { IconComponent } from "@/content/types/common";
 
 export const WavingHand: IconComponent = ({ className, ...props }) => {
   return (
