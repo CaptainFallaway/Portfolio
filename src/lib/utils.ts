@@ -9,13 +9,3 @@ export function openURL(url: string) {
   window.open(url, "_blank", "noopener,noreferrer");
 }
 
-export function scrollToSection(id: string) {
-  const element = document.getElementById(id);
-
-  if (!element) {
-    console.error(`Element with id "${id}" not found.`);
-    return;
-  }
-
-  element.scrollIntoView({ behavior: "smooth" });
-};

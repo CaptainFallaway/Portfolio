@@ -2,14 +2,17 @@
 @import "./components/navbar.css";
 
 html {
-  scroll-behavior: auto;
-  scroll-snap-type: y mandatory;
-}
-
-body {
   margin: 0;
   padding: 0;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+
+  /* Hide scrollbar for Chrome/Safari/Edge */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Ensure content still scrolls */
+  -ms-overflow-style: none;
 }
 
 main {

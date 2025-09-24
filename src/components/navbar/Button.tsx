@@ -22,7 +22,7 @@ export function NavBarButton({ onClick, children, label }: NavBarButtonProps) {
     variant: "ghost" as "ghost",
     size: "icon" as "icon",
     className: "navbar-button",
-    onClick,
+    onClick: onClick,
     "aria-label": label,
   };
 

@@ -3,7 +3,8 @@ import { Library, CircleUser } from "lucide-react";
 
 import { GithubURL, LinkedinURL } from "@/content/socials";
 
-import { openURL, scrollToSection } from "@/lib/utils";
+import scrollManager from "@/lib/scrollManager";
+import { openURL } from "@/lib/utils";
 
 import type { Navbar } from "./types";
 
@@ -13,7 +14,7 @@ export const NAVBAR_ITEMS: Navbar = [
     item: {
       label: "Hello",
       icon: WavingHand,
-      onClick: () => scrollToSection("hello"),
+      onClick: () => scrollManager.scrollToSection("hello"),
     },
   },
   {
@@ -21,7 +22,7 @@ export const NAVBAR_ITEMS: Navbar = [
     item: {
       label: "About",
       icon: Library,
-      onClick: () => scrollToSection("about"),
+      onClick: () => scrollManager.scrollToSection("about"),
     },
   },
   {
@@ -29,7 +30,7 @@ export const NAVBAR_ITEMS: Navbar = [
     item: {
       label: "Contact",
       icon: CircleUser,
-      onClick: () => scrollToSection("socials"),
+      onClick: () => scrollManager.scrollToSection("socials"),
     },
   },
   { type: "separator" },
@@ -45,6 +46,6 @@ export const NAVBAR_ITEMS: Navbar = [
     type: "button",
     item: { label: "Github", icon: Github, onClick: () => openURL(GithubURL) },
   },
-  // { type: "separator" },
-  // { type: "theme-toggle" },
+  { type: "separator" },
+  { type: "theme-toggle" },
 ] as const;
