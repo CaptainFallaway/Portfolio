@@ -7,6 +7,8 @@ import { SITE } from "@/content/site";
 
 export default function App() {
   useEffect(() => {
+    document.title = SITE.title;
+
     scrollManager.attachListener();
 
     scrollManager.scrollToSection(SITE.sections[0].id);

@@ -8,7 +8,7 @@ import About from "@/components/sections/About";
 import Socials from "@/components/sections/Socials";
 
 export const SITE: Site = {
-  title: "CaptainFallaway",
+  title: "CaptainFallaway's Portfolio",
   sections: [
     {
       id: "hello",
