@@ -12,10 +12,6 @@ class ScrollManager {
 
   private detector: ScrollDetector;
 
-  get currentSection(): { index: number, id: string } {
-    return { index: this.currentSectionIndex, id: this.sections[this.currentSectionIndex] };
-  }
-
   constructor(...sections: string[]) {
     this.sections = sections;
 
@@ -27,9 +23,9 @@ class ScrollManager {
   }
 
   /**
-   * Attaches event listeners for scroll detection and window resizing.
-   * Initializes scroll detection and adds a resize event listener to the window.
-   */
+  * Attaches event listeners for scroll detection and window resizing.
+  * Initializes scroll detection and adds a resize event listener to the window.
+  */
   attachListener() {
     this.detector.attach();
     window.addEventListener('resize', this.onResize);
