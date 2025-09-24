@@ -82,7 +82,7 @@ export class ScrollDetector {
   }
 
   private handleTouchStart(e: TouchEvent) {
-    e.preventDefault();
+    // e.preventDefault();
     this.touchStartY = e.touches[0].clientY;
   }
 
@@ -101,8 +101,7 @@ export class ScrollDetector {
     }
   }
 
-  private handleTouchEnd(e: TouchEvent) {
-    e.preventDefault();
+  private handleTouchEnd() {
     this.touchStartY = 0;
     this.hasTouchScrolled = false;
   }

@@ -1,5 +1,5 @@
 .navbar-parent {
-  @apply fixed pb-6 px-6 w-screen bottom-0 left-1/2 -translate-x-1/2 z-20;
+  @apply fixed flex justify-center pb-6 px-6 w-screen bottom-0 left-1/2 -translate-x-1/2 z-20;
 }
 
 .navbar {
@@ -8,7 +8,6 @@
 
     flex 
     items-center
-    justify-self-center-safe
 
     sm:w-fit
     w-full
