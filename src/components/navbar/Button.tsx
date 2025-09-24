@@ -5,6 +5,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useState } from "react";
 
 interface NavBarButtonProps {
   onClick?: () => void;
@@ -13,9 +14,11 @@ interface NavBarButtonProps {
 }
 
 export function NavBarButton({ onClick, children, label }: NavBarButtonProps) {
+  const [tooltipOpen, setTooltipOpen] = useState(false);
+
   return (
     <TooltipProvider>
-      <Tooltip>
+      <Tooltip open={tooltipOpen}>
         <TooltipTrigger asChild>
           <Button
             variant="ghost"
@@ -23,12 +26,16 @@ export function NavBarButton({ onClick, children, label }: NavBarButtonProps) {
             className="navbar-button"
             onClick={onClick}
             aria-label={label}
+            onMouseEnter={() => setTooltipOpen(true)}
+            onMouseLeave={() => setTooltipOpen(false)}
           >
             {children}
           </Button>
         </TooltipTrigger>
         <TooltipContent>
-          <p>{label}</p>
+          <div className="p-1">
+            <p className="font-semibold">{label}</p>
+          </div>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
