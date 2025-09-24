@@ -3,7 +3,7 @@
 
 html {
   scroll-behavior: auto;
-  scroll-snap-type: y mandatory; /* Less aggressive than mandatory */
+  scroll-snap-type: y mandatory;
 }
 
 body {

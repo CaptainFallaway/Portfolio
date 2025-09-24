@@ -10,7 +10,7 @@ export default function App() {
 
       {/* Greetings */}
       <section id="hello">
-        <div className="card flex justify-center p-6 h-[20vh]">
+        <div className="card flex justify-center p-6 h-[20vh] w-[80vw]">
           <h1 className="text-4xl font-bold">Hello, I'm Alex</h1>
         </div>
       </section>
