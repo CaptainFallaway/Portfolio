@@ -9,13 +9,17 @@ export default function App() {
       </div>
 
       {/* Greetings */}
-      <section id="home">
-        <h1 className="text-4xl font-bold">Hello, I'm Alex</h1>
+      <section id="hello">
+        <div className="card flex justify-center p-6 h-[20vh]">
+          <h1 className="text-4xl font-bold">Hello, I'm Alex</h1>
+        </div>
       </section>
 
       {/* Skills */}
       <section id="about">
-        <h2 className="text-2xl font-semibold">Skills</h2>
+        <h2 className="text-2xl font-semibold">
+          Experiences, Competence, What I like to work on.
+        </h2>
       </section>
 
       {/* Where? */}

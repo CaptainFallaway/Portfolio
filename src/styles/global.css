@@ -1,16 +1,23 @@
 @import "./components/content.css";
 @import "./components/navbar.css";
 
-main {
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+html {
+  scroll-behavior: auto;
+  scroll-snap-type: y mandatory; /* Less aggressive than mandatory */
+}
+
+body {
+  margin: 0;
+  padding: 0;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-ring) var(--color-background);
-  height: 300vh;
+}
+
+main {
+  min-height: 100vh;
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
   scroll-snap-align: start;
   display: flex;
   justify-content: center;

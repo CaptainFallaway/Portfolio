@@ -7,7 +7,7 @@
     items-center
     justify-self-center-safe
 
-    sm:w-[36rem]
+    sm:w-[32rem]
     w-[calc(100vw-3rem)]
 
     bg-card
@@ -20,17 +20,17 @@
   @apply aspect-square
     size-auto
     flex-1
-    rounded-md
+    rounded-4xl
     cursor-pointer;
 }
 
-.navbar-button:first-child {
+/* .navbar-button:first-child {
   @apply rounded-l-4xl rounded-r-md;
 }
 
 .navbar-button:last-child {
   @apply rounded-r-4xl rounded-l-md;
-}
+} */
 
 .navbar-button-logo {
   @apply size-6;

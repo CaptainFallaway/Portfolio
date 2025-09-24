@@ -1,9 +1,9 @@
-import { Github, Linkedin } from "@/components/logos";
-import { HomeIcon, Library, CircleUser } from "lucide-react";
+import { Github, Linkedin, WavingHand } from "@/components/icons";
+import { Library, CircleUser } from "lucide-react";
 
 import { GithubURL, LinkedinURL } from "@/content/socials";
 
-import { openURL, scrollOneViewHeight } from "@/lib/utils";
+import { openURL, scrollToSection } from "@/lib/utils";
 
 import type { Navbar } from "./types";
 
@@ -11,9 +11,9 @@ export const NAVBAR_ITEMS: Navbar = [
   {
     type: "button",
     item: {
-      label: "Home",
-      icon: HomeIcon,
-      onClick: () => scrollOneViewHeight(0),
+      label: "Hello",
+      icon: WavingHand,
+      onClick: () => scrollToSection("hello"),
     },
   },
   {
@@ -21,7 +21,7 @@ export const NAVBAR_ITEMS: Navbar = [
     item: {
       label: "About",
       icon: Library,
-      onClick: () => scrollOneViewHeight(1),
+      onClick: () => scrollToSection("about"),
     },
   },
   {
@@ -29,7 +29,7 @@ export const NAVBAR_ITEMS: Navbar = [
     item: {
       label: "Contact",
       icon: CircleUser,
-      onClick: () => scrollOneViewHeight(2),
+      onClick: () => scrollToSection("socials"),
     },
   },
   { type: "separator" },
@@ -45,4 +45,6 @@ export const NAVBAR_ITEMS: Navbar = [
     type: "button",
     item: { label: "Github", icon: Github, onClick: () => openURL(GithubURL) },
   },
-];
+  { type: "separator" },
+  { type: "theme-toggle" },
+] as const;
