@@ -41,7 +41,7 @@ export default function Hello() {
             <Profile profile={HELLO_SECTION.profile} />
           </div>
         </div>
-        <div className="card p-6 w-full h-fit flex justify-center">
+        <div className="card p-8 w-full h-fit flex justify-center">
           <Welcome welcome={HELLO_SECTION.welcome} />
         </div>
       </div>

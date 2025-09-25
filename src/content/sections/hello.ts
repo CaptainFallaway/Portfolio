@@ -9,6 +9,6 @@ export const HELLO_SECTION: HelloSection = {
   welcome: {
     title: "Welcome to my Portfolio!",
     description:
-      "I'm CaptainFallaway, a passionate full-stack developer. Explore my projects and skills!",
+      "This is my attempt at making a minimalistic portfolio with a design and a UX that represents my philosophy as a developer.",
   },
 }
