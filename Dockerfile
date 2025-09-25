@@ -1,4 +1,4 @@
-FROM mirror.gcr.io/library/node:22-alpine AS build
+FROM node:22-alpine AS build
 
 WORKDIR /build
 
