@@ -2,7 +2,8 @@ import { Github, Linkedin } from "@/components/icons";
 
 import { GithubURL, LinkedinURL } from "@/content/socials";
 
-import scrollManager from "@/lib/scrollManager";
+// import scrollManager from "@/lib/scrollManager";
+import { scrollToSection } from "@/lib/utils";
 import { openURL } from "@/lib/utils";
 
 import type { Navbar, NavbarItem } from "./types/navbar";
@@ -13,7 +14,7 @@ const SectionNavButtons: NavbarItem[] = SITE.sections.map((section) => ({
   item: {
     label: section.title,
     Icon: section.NavbarIcon,
-    onClick: () => scrollManager.scrollToSection(section.id),
+    onClick: () => scrollToSection(section.id),
   },
 }));
 

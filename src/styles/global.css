@@ -4,15 +4,6 @@
 html {
   margin: 0;
   padding: 0;
-  scrollbar-width: none;
-
-  /* Hide scrollbar for Chrome/Safari/Edge */
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Ensure content still scrolls */
-  -ms-overflow-style: none;
 }
 
 main {
