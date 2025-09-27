@@ -4,7 +4,7 @@ export const HELLO_SECTION: HelloSection = {
   profile: {
     name: "CaptainFallaway",
     role: "Full-Stack Developer",
-    avatar: { src: "/avatar.webp", alt: "Avatar of CaptainFallaway" },
+    avatar: { src: "/avatar.png", alt: "Avatar of CaptainFallaway" },
   },
   welcome: {
     title: "Welcome to my Portfolio!",
