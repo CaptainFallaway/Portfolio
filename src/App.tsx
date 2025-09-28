@@ -4,6 +4,7 @@ import { NavigationBar } from "@/components/navbar/Navbar";
 // import scrollManager from "@/lib/scrollManager";
 
 import { SITE } from "@/content/site";
+import { InDevel } from "@/components/InDevel";
 
 export default function App() {
   useEffect(() => {
@@ -20,6 +21,8 @@ export default function App() {
 
   return (
     <main>
+      <InDevel />
+
       {/* Navigation */}
       <div className="navbar-parent">
         <NavigationBar />
